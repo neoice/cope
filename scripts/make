@@ -1,6 +1,9 @@
 #!/usr/bin/env perl
 use App::Cope;
 
+no if $] >= 5.018, 'warnings', 'experimental::smartmatch';
+use feature 'switch';
+
 sub process {
 
   # make's own commands

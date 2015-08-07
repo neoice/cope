@@ -3,7 +3,7 @@ package App::Cope;
 use strict;
 use warnings;
 use 5.010_000;
-no if $] >= 5.018, warnings => "experimental";
+no if $] >= 5.018, 'warnings', 'experimental::smartmatch';
 use Carp;
 
 no warnings 'experimental';
@@ -112,7 +112,11 @@ sub run {
   }
   else {
     my $ret_val = run_with( $process, @args );
+<<<<<<< HEAD
 	exit $ret_val;
+=======
+    exit $ret_val;
+>>>>>>> 63da5cab5d88a5f44a1fb4c24a47a73aab1fcbe4
   }
 }
 
@@ -229,8 +233,8 @@ sub line {
       # match, e.g. /(?: (\S+) )?/x where the match fails.
       if ( defined $start and defined $end ) {
         my $before = substr $_, $start, $end - $start;
-	my $c = get( $colour, $before );
-	colour( $start, $end => $c );
+        my $c = get( $colour, $before );
+        colour( $start, $end => $c );
       }
     }
 

@@ -4,6 +4,7 @@ use strict;
 use warnings;
 no if $] >= 5.018, warnings => "experimental";
 use 5.010_000;
+no if $] >= 5.018, 'warnings', 'experimental::smartmatch';
 
 no warnings 'experimental';
 
